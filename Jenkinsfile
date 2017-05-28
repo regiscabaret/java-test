@@ -7,7 +7,10 @@ pipeline {
 
   stages {
     stage ('Say Hello'){
-      SayHello.call("Regis")
+      agent any
+      steps{
+        SayHello.call("Regis")
+      }
     }
 
     stage ('Unit Tests') {
